@@ -1,5 +1,5 @@
 import math
-def calc(n1, op, n2):
+def sci(n1, op, n2):
     if(op == '**'):
         r = math.pow(n1, n2)
         return r

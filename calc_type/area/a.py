@@ -1,4 +1,5 @@
 import math
+
 def circ(r):
     a = round(math.pi * (math.pow(r, 2)), 2)
     return a
@@ -7,7 +8,8 @@ def tri(b, h):
     a = round(b * h / 2, 2)
     return a
 
-def quad(l):
+
+def sqr(l):
     a = math.pow(l, 2)
     return a
 
