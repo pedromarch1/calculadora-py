@@ -1,12 +1,12 @@
 import math
 
-st = input('Selecione o modo da calculadora: (C) Científica, (P) Padrão, (A) Área ou (J) Juros: ')
+st = input('Selecione o modo da calculadora: (P) Padrão, (C) Científica, (A) Área ou (J) Juros: ')
 
 if(st.upper() == 'P'):
 
-    print('Calculadora Padrão\n----------------------------------------------------')
-
-    a = eval(input('Insira uma conta (insira apenas operadores básicos): '))
+    print('\nCalculadora Padrão\n----------------------------------------------------')
+    print('\n(+) (-) (*) (/)\n')
+    a = eval(input('\nInsira uma conta utilizando os operadores acima:\n'))
     print(float(a))
 
 elif(st.upper() == 'C'):
@@ -16,7 +16,7 @@ elif(st.upper() == 'C'):
             r = math.pow(n1, n2)
             return r
 
-        elif(op == 'sqrt'):
+        elif(op.upper() == 'sqrt'):
             r = n1 * math.sqrt(n2)
             return r
         
@@ -24,34 +24,34 @@ elif(st.upper() == 'C'):
             r = n1 * n2 / 100
             return r
         
-        elif(op == 'sin' or op == 'sen' or op == 'seno'):
+        elif(op.lower() == 'sen'):
             r = n1 * math.sin(n2)
             return r
         
-        elif(op == 'cos' or op == 'cossen' or op == 'cosseno'):
+        elif(op.lower() == 'cos'):
             r = n1 * math.cos(n2)
             return r
         
-        elif(op == 'tan' or op == 'tg' or op == 'tangente'):
+        elif(op.lower() == 'tan'):
             r = n1 * math.tan(n2)
             return r
         
-        elif(op == 'asin' or op == 'asen' or op == 'arcosseno'):
+        elif(op.lower() == 'asen'):
             r = n1 * math.asin(n2)
             return r
         
-        elif(op == 'acos' or op == 'acossen' or op == 'arco cosseno'):
+        elif(op.lower() == 'acos'):
             r = n1 * math.acos(n2)
             return r
         
-        elif(op == 'atan' or op == 'atg' or op == 'arco tangente'):
+        elif(op.lower() == 'atan'):
             r = n1 * math.atan(n2)
             return r
 
     print('Calculadora Científica\n----------------------------------------------------')
 
     n1 = float(input('Insira um numero: '))
-    op = input('Operador científico: ')
+    op = input('Operador científico: (**) (sqrt) (%) (sen) (cos) (tan) (asen) (acos) (atan) ')
     n2 = float(input('Segundo numero: '))
 
     r = calc(n1, op, n2)
@@ -63,7 +63,7 @@ elif(st.upper() == 'A'):
 
     a = input('\nSelecione qual área você deseja calcular: (C) Círculo, (T) Triângulo, (Q) Quadrado,(R) Retângulo, (P) Pentágono, (H) Hexágono\n')
 
-    if(a == 'C' or a == 'c'):
+    if(a.upper() == 'C'):
         def circ(r):
             a = math.pi * (math.pow(r, 2))
             return a
@@ -74,7 +74,7 @@ elif(st.upper() == 'A'):
 
         print(f'Área da circunferência: {a}')
         
-    elif(a == 'T' or a == 't'):
+    elif(a.upper() == 'T'):
         def tri(b, h):
             a = b * h / 2
             return a
@@ -87,7 +87,7 @@ elif(st.upper() == 'A'):
 
         print(f'Área do triângulo: {a}')
 
-    elif(a == 'Q' or a == 'q'):
+    elif(a.upper() == 'Q'):
         def quad(l):
             a = math.pow(l, 2)
             return a
@@ -97,7 +97,7 @@ elif(st.upper() == 'A'):
 
         print(f'Área do quadrado: {a}')
 
-    elif(a == 'R' or a == 'r'):
+    elif(a.upper() == 'R'):
         def ret(l1, l2):
             a = l1 * l2
             return a
@@ -110,7 +110,7 @@ elif(st.upper() == 'A'):
 
         print(f'Área do retângulo: {a}')
 
-    elif(a == 'P' or a == 'p'):
+    elif(a.upper() == 'P'):
         def pent(l):
             a = (5 * math.pow(l, 2)) / (4 * math.tan(0.628319))
             return a
@@ -121,7 +121,7 @@ elif(st.upper() == 'A'):
 
         print(f'Área do pentágono: {a}')
 
-    elif(a == 'H' or a == 'h'):
+    elif(a.upper() == 'H'):
         def hex(l):
             a = ((3 * math.sqrt(3)) * (math.pow(l, 2))) / 2
             return a
@@ -145,13 +145,13 @@ elif(st.upper() == 'J'):
 
     tj = input('Insira o tipo de juros: juros simples (S) ou juros compostos (C) ')
 
-    if(tj == 'S' or tj == 's'):
+    if(tj.upper() == 'S'):
 
         c = float(input('Insira o capital inicial: '))
 
         i = float(input('Insira a taxa de juros: '))
 
-        t = int(input('Insira o tempo da aplicação: '))
+        t = int(input('Insira o tempo da aplicação em meses: '))
 
         j = simples(c, i, t)
 
@@ -160,7 +160,7 @@ elif(st.upper() == 'J'):
         print(f'\nTotal de juros: R${j}')
         print(f'\nMontante: R${m}')
 
-    elif(tj == 'C' or tj == 'c'):
+    elif(tj.upper() == 'C'):
 
         def comp(c, i, t):
             j = round(c * math.pow(1 + (i / 100), t) - c, 2)
@@ -170,11 +170,11 @@ elif(st.upper() == 'J'):
             m = round(c + j, 2)
             return m
 
-        c = float(input('Insira o capital inicial: '))
+        c = float(input('Insira o capital inicial: R$'))
 
-        i = float(input('Insira a taxa de juros: '))
+        i = float(input('Insira a taxa de juros: R$'))
 
-        t = int(input('Insira o tempo da aplicação: '))
+        t = int(input('Insira o tempo da aplicação em meses: '))
 
         j = comp(c, i, t)
 
