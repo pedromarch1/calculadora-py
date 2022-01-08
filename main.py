@@ -70,6 +70,7 @@ elif(st.upper() == 'I'): #Calculate interests on an investment
         a = amount(c, j)
         fj = format_curr(j)
         fm = format_curr(a)
+        p = perf(c, a)
         print(f'\nTotal Gains: {fj} (After {t} year(s))')
         print(f'\nTotal Amount: {fm} (Performance: {p}%)')
 
