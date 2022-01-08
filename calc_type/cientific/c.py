@@ -8,10 +8,6 @@ def sci(n1, op, n2):
         r = n1 * math.sqrt(n2)
         return r
 
-    elif(op == '%'):
-        r = n1 * n2 / 100
-        return r
-
     elif(op.lower() == 'sen'):
         r = n1 * math.sin(n2)
         return r

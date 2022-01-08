@@ -1,4 +1,4 @@
-def padrao(n1,op, n2):
+def d(n1,op, n2):
 
     if(op == '+'):
         r = n1 + n2
@@ -14,4 +14,8 @@ def padrao(n1,op, n2):
 
     elif(op == '/'):
         r = n1 / n2
+        return r
+
+    elif(op == '%'):
+        r = n1 * n2 / 100
         return r

@@ -1,4 +1,4 @@
-from calc_type.default.p import *
+from calc_type.default.d import *
 from calc_type.cientific.c import *
 from calc_type.area.a import *
 from calc_type.interest.i import *
@@ -6,23 +6,23 @@ from formatation.form import *
 
 st = input('Select calculator mode: (D) Default, (C) Cientific, (A) Area ou (I) Interest: ')
 
-if(st.upper() == 'D'):
+if(st.upper() == 'D'): #Basic operations for daily routines
     print('\nDefault Calculator\n----------------------------------------------------')
     n1 = float(input('\nInsert a number:\n'))
-    op = input('\n(+) (-) (*) (/) \n')
+    op = input('\n(+) (-) (*) (/) (%) \n')
     n2 = float(input('\nInsert another number:\n'))
-    r = padrao(n1, op, n2)
+    r = d(n1, op, n2)
     print(f'\nOperation result:\n{r}')
 
-elif(st.upper() == 'C'):
+elif(st.upper() == 'C'): #Calculate scientific values using special features, such as trigonometry
     print('\nCientific Calculator\n----------------------------------------------------')
     n1 = float(input('\nNumber:\n'))
-    op = input('\n(**) (sqrt) (%) (sen) (cos) (tan) (asen) (acos) (atan)\n')
+    op = input('\n(**) (sqrt) (sen) (cos) (tan) (asen) (acos) (atan)\n')
     n2 = float(input('\nSecond number:\n'))
     r = sci(n1, op, n2)
     print(f'\nOperation result:\n{r}')
 
-elif(st.upper() == 'A'):
+elif(st.upper() == 'A'): #Calculate an area of a reagular form, based on values given by the user
     print('\nArea Calculator\n----------------------------------------------------')
     a = input('\nArea type: (C) Circunference, (T) Triangle, (S) Square,(R) Rectangle, (P) Pentagon, (H) Hexagon\n')
 
@@ -58,7 +58,7 @@ elif(st.upper() == 'A'):
         a = hex(l)
         print(f'Hexagon area: {a} sq. m')
 
-elif(st.upper() == 'I'): #Calcula juros de um investimento ou um empréstimo, por exemplo
+elif(st.upper() == 'I'): #Calculate interests on an investment
     print('Interest Calculator\n----------------------------------------------------')
     tj = input('Interest type: Simple (S) Coumpound (C) ')
 
