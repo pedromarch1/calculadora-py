@@ -3,8 +3,9 @@ from calc_type.cientific.c import *
 from calc_type.area.a import *
 from calc_type.interest.i import *
 from formatation.form import *
+from tkinter import *
 
-st = input('Select calculator mode: (D) Default, (C) Cientific, (A) Area ou (I) Interest: ')
+st = input('Select calculator mode: (D) Default, (C) Cientific, (A) Area or (I) Interest: ')
 
 if(st.upper() == 'D'): #Basic operations for daily routines
     print('\nDefault Calculator\n----------------------------------------------------')
