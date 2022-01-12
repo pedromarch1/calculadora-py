@@ -1,5 +1,4 @@
 import math
-import random
 
 def simple(c, i, t):
     j = round(c * (i/100) * t, 2)
